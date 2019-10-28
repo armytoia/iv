@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>salvar-aluno</ion-title>
+    <ion-title>Cadastro de Aluno</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-form>
+    <ion-item>
+      <ion-label position="floating">Nome*:</ion-label>
+      <ion-input [(ngModel)]="aluno.nome" requiered></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Turma*:</ion-label>
+      <ion-select [(ngModel)]="turma.aluno" [value]="turma" requiered></ion-select>
+    </ion-item>
+  </ion-form>
 </ion-content>

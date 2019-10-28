@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>salvar-pais</ion-title>
+    <ion-title>Cadastro de pais</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,6 +17,14 @@
   <ion-item>
   <ion-label position="floating">Telefone*:</ion-label>
   <ion-input [(ngModel)]="pais.telefone" requiered></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Estado*:</ion-label>
+  <ion-select  [(ngModel)]="pais.estado" [value] = "nome" requiered></ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Cidade*:</ion-label>
+  <ion-select [(ngModel)]="pais.cidade" [value] = "nome" requiered></ion-select>
   </ion-item>
   </ion-form>
   <ion-button (click)= "cadastrar">cadastrar</ion-button>
