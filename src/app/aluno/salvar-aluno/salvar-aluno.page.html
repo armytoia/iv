@@ -5,14 +5,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-form>
-    <ion-item>
-      <ion-label position="floating">Nome*:</ion-label>
-      <ion-input [(ngModel)]="aluno.nome" requiered></ion-input>
-    </ion-item>
+  <ion-card-content>
+    <form #meuSonho='ngForm'>
+      <ion-item>
+        <ion-label position="floating">Nome*:</ion-label>
+        <ion-input #nome='ngModel' name="nome" [(ngModel)]="aluno.nome" requiered></ion-input>
+      </ion-item>
     <ion-item>
       <ion-label position="floating">Turma*:</ion-label>
-      <ion-select [(ngModel)]="turma.aluno" [value]="turma" requiered></ion-select>
+      <ion-select #turma='ngModel' [(ngModel)]="aluno.turma" requiered>
+        <ion-select-option *ngFor='let turma of listaTurma | async' [value]="turma">{{turma.turma}}</ion-select-option>
+      </ion-select>
     </ion-item>
-  </ion-form>
+    </form>
+  </ion-card-content>
+  <ion-card>
+    <span style='color:red' *ngIf="nome.errors && nome.touched">
+      <ion-label>O nome é obrigatório! </ion-label>
+    </span>
+    <span style='color:red' *ngIf="turma.errors && turma.touched">
+      <ion-label>A turma é obrigatória! </ion-label>
+    </span>
+  </ion-card>
+
+  <ion-button [disabled]='!meuSonho.form.valid' expand="full" color="danger" (click)="salvar()"> salvar </ion-button>
 </ion-content>

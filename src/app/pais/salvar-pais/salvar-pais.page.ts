@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from "angularfire2/auth";
+import { Pais } from '../entidade/pais';
 
 @Component({
   selector: 'app-salvar-pais',
@@ -7,11 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalvarPaisPage implements OnInit {
 
-  constructor() { }
+  pais: Pais = new Pais();
+  constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+  cadastrar() {
+    this.afAuth.auth.createUserWithEmailAndPassword(this.pais.email, this.pais.senha).then(
+      () => { this.router.navigate(['listar-aluno']); }
+    ).catch((erro) => console.log(erro));
   }
-redefinir(){
-  
-}
 }
