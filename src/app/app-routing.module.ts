@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'salvar-estado', loadChildren: './estado/salvar-estado/salvar-estado.module#SalvarEstadoPageModule' },
   { path: 'listar-estado', loadChildren: './estado/listar-estado/listar-estado.module#ListarEstadoPageModule' },
   { path: 'salvar-turma', loadChildren: './turma/salvar-turma/salvar-turma.module#SalvarTurmaPageModule' },  { path: 'salvar-mensagem', loadChildren: './mensagem/salvar-mensagem/salvar-mensagem.module#SalvarMensagemPageModule' },
+  { path: 'salvar-cidade', loadChildren: './cidade/salvar-cidade/salvar-cidade.module#SalvarCidadePageModule' },
+  { path: 'listar-cidade', loadChildren: './cidade/listar-cidade/listar-cidade.module#ListarCidadePageModule' },
 
 ];
 

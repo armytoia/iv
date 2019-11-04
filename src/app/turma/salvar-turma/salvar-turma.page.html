@@ -5,8 +5,9 @@
 </ion-header>
 
 <ion-content>
-<ion-label position = "floating">Turma:</ion-label>
-<ion-input [(ngModel)] = "turma.turma" placeholder = "insira o ano e o curso"></ion-input>
-
-<ion-button (click) = "salvar">salvar</ion-button>
+  <ion-item>
+    <ion-label position="floating">Turma:</ion-label>
+    <ion-input [(ngModel)]="turma.turma" placeholder="insira o ano e o curso"></ion-input>
+  </ion-item>
+  <ion-button (click)="salvar()">salvar</ion-button>
 </ion-content>
