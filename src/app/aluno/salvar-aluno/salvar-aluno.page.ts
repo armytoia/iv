@@ -3,6 +3,7 @@ import { Aluno } from '../entidade/aluno';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { ModalController, PopoverController } from '@ionic/angular';
+import { ListarAlunoPage } from '../listar-aluno/listar-aluno.page';
 
 @Component({
   selector: 'app-salvar-aluno',
@@ -15,7 +16,15 @@ export class SalvarAlunoPage implements OnInit {
   resultado: number;
 
   constructor(private banco: AngularFireDatabase, private router: Router, private modal: ModalController, public popoverController: PopoverController) { }
+ async tela( ev : any){
+   const popover = await this.popoverController.create({
+      component: ListarAlunoPage,
+      event: ev,
+      translucent: true
+    });
 
+    return await popover.present();
+  }
   ngOnInit() {
   }
   salvar(): void {

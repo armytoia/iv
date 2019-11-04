@@ -17,7 +17,7 @@ export class SalvarPaisPage implements OnInit {
   ngOnInit() { }
   cadastrar() {
     this.afAuth.auth.createUserWithEmailAndPassword(this.pais.email, this.pais.senha).then(
-      () => { this.router.navigate(['listar-aluno']); }
+      () => { this.router.navigate(['salvar-aluno']); }
     ).catch((erro) => console.log(erro));
   }
 }

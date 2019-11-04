@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Documento de Autorização
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <form #meuSonho='ngForm'>
+      <ion-input #campo1="ngModel" [(ngModel)]="mensagem.campo1" name="campo1" required>Eu,</ion-input>
+      <ion-input #campo2="ngModel" [(ngModel)]="mensagem.campo2" name="campo2" required>portador(a) do RG ou CPF</ion-input>
+      <ion-input #campo3="ngModel" [(ngModel)]="mensagem.campo3" name="campo3" required>autorizo a saída do(a) aluno(a)</ion-input>
+      <ion-input #campo4="ngModel" [(ngModel)]="mensagem.campo4" name="campo4" required>matriculado(a) no (ano e curso)</ion-input>
+      <ion-input #campo5="ngModel" [(ngModel)]="mensagem.campo5" name="campo5" required>pelo motivo</ion-input>
+      <ion-item>
+        <ion-label position="flolting">Grau de parentesco*:</ion-label>
+        <ion-select #parentesco='ngModel' [(ngModel)]="mensagem.parentesco" placeholder="Selecione o grau" requiered>
+          <ion-select-option value="tio">tio(a)</ion-select-option>
+          <ion-select-option value="pai">pai ou mãe</ion-select-option>
+          <ion-select-option value="avo">avô ou avó</ion-select-option>
+          <ion-select-option value="irmao">irmã ou irmão</ion-select-option>
+          <ion-select-option value="outro">outro</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Data*:</ion-label>
+        <ion-datetime #data =  "ngModel" displayFormat="DD MM YY" placeholder="Selecione a data"  [(ngModel)] = "mensagem.data" name = "data" requiered></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Horário*:</ion-label>
+        <ion-datetime displayFormat="h:mm a" placeholder="Selecione o horário" #horario = "ngModel" [(ngModel)] = "mensagem.horario" name = "data" requiered></ion-datetime>
+      </ion-item>
+    </form>
+    <ion-item>
+      <ion-label position="flolting">Caso tenha escolhido "outro" especifique:</ion-label>
+      <ion-input [(ngModel)]=mensagem.campo6 name="campo6"></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <ion-card>
+    <span style='color:red' *ngIf="campo1.errors && campo1.touched">
+      <ion-label>O nome do responsável é obrigatório! </ion-label>
+    </span>
+    <span style='color:blue' *ngIf="campo2.errors && campo2.touched">
+      <ion-label>O RG ou CPF é obrigatório! </ion-label>
+    </span>
+    <span style='color:red' *ngIf="campo3.errors && campo3.touched">
+      <ion-label>O nome do aluno é obrigatório! </ion-label>
+    </span>
+    <span style='color:blue' *ngIf="campo4.errors && campo4.touched">
+      <ion-label>A turma(ano e curso) é obrigatória! </ion-label>
+    </span>
+    <span style='color:red' *ngIf="campo5.errors && campo5.touched">
+      <ion-label>O motivo é obrigatório! </ion-label>
+    </span>
+    <span style='color:blue' *ngIf="parentesco.errors && parentesco.touched">
+      <ion-label>O grau de parentesco é obrigatório! </ion-label>
+    </span>
+    <span style='color:red' *ngIf="data.errors && data.touched">
+      <ion-label>A data é obrigatória! </ion-label>
+    </span>
+    <span style='color:blue' *ngIf="horario.errors && horario.touched">
+      <ion-label>O horário é obrigatório! </ion-label>
+    </span>
+  </ion-card>
+
+  <ion-button [disabled]='!meuSonho.form.valid' color="danger" (click)="enviar()"><ion-icon name="paper-plane"></ion-icon>Enviar</ion-button>
+</ion-content>

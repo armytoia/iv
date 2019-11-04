@@ -6,6 +6,7 @@ import { ModalController } from '@ionic/angular';
 import * as _ from 'lodash';
 import { PopoverController } from '@ionic/angular';
 import { Aluno } from '../entidade/aluno';
+import { SalvarAlunoPage } from '../salvar-aluno/salvar-aluno.page';
 
 @Component({
   selector: 'app-listar-aluno',
