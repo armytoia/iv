@@ -1,3 +1,3 @@
 export class Turma {
-turma: string;
+ano: string;
 }

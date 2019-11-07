@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'salvar-turma', loadChildren: './turma/salvar-turma/salvar-turma.module#SalvarTurmaPageModule' },  { path: 'salvar-mensagem', loadChildren: './mensagem/salvar-mensagem/salvar-mensagem.module#SalvarMensagemPageModule' },
   { path: 'salvar-cidade', loadChildren: './cidade/salvar-cidade/salvar-cidade.module#SalvarCidadePageModule' },
   { path: 'listar-cidade', loadChildren: './cidade/listar-cidade/listar-cidade.module#ListarCidadePageModule' },
+  { path: 'listar-turma', loadChildren: './turma/listar-turma/listar-turma.module#ListarTurmaPageModule' },
 
 ];
 

@@ -11,12 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { SalvarAlunoPageModule } from './aluno/salvar-aluno/salvar-aluno.module';
+//import { SalvarAlunoPage } from './aluno/salvar-aluno/salvar-aluno.page';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, SalvarAlunoPageModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, //SalvarAlunoPageModule,
     AngularFireModule.initializeApp({
 
       apiKey: "AIzaSyDLOPyDnuG0oxIZnTUgNXKvsFxWXStAOb8",

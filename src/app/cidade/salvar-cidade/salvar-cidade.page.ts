@@ -17,7 +17,6 @@ export class SalvarCidadePage implements OnInit {
   listaEstado: Observable<Estado[]>;
   constructor(private fire: AngularFireDatabase, private rota: Router) {
     this.listaEstado = this.fire.list<Estado>('estado').snapshotChanges().pipe(
-
       map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
 
     );

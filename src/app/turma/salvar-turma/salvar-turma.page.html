@@ -5,9 +5,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-card-content>
   <ion-item>
     <ion-label position="floating">Turma:</ion-label>
-    <ion-input [(ngModel)]="turma.turma" placeholder="insira o ano e o curso"></ion-input>
+    <ion-input [(ngModel)]="turma.ano" placeholder="insira o ano e o curso"></ion-input>
   </ion-item>
-  <ion-button (click)="salvar()">salvar</ion-button>
+</ion-card-content>
+  <ion-button color = "danger" shape = "round" expand = "full" (click)="salvar()">salvar</ion-button>
 </ion-content>

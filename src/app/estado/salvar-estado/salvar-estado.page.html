@@ -9,13 +9,11 @@
     <form #meuSonho='ngForm'>
       <ion-item>
         <ion-label position="floating">Nome*:</ion-label>
-        <ion-input #nome = "ngModel" name="nome" [(ngModel)]="cidade.nome" requiered></ion-input>
+        <ion-input #nome = "ngModel" name="nome" [(ngModel)]="estado.nome" requiered></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Sigla*:</ion-label>
-        <ion-select #sigla = "ngModel" [(ngModel)]="cidade.estado" requiered>
-          <ion-select-option *ngFor='let estado of listaEstado | async' [value]="estado">{{estado.nome}}</ion-select-option>
-        </ion-select>
+        <ion-input #sigla = "ngModel" [(ngModel)]="estado.sigla" requiered></ion-input>
       </ion-item>
     </form>
   </ion-card-content>

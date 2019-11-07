@@ -35,8 +35,8 @@
   </ion-item>
   <ion-item>
   <ion-label position="floating">Cidade*:</ion-label>
-  <ion-select [(ngModel)]="pais.cidade" [value] = "nome" requiered></ion-select>
-  </ion-item>
+  <ion-select-option *ngFor='let cidade of listaCidade | async' [value]="cidade">{{cidade.nome}}</ion-select-option>
+</ion-select>
 </ion-card-content>
   <ion-button [disabled] = '!meuSonho.form.valid' color = "danger" expand = "full" (click)= "cadastrar">cadastrar</ion-button>
   <ion-button (click)= "redefinir">redefinir senha</ion-button>

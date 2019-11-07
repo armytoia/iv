@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Estado } from '../entidade/estado';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-salvar-estado',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalvarEstadoPage implements OnInit {
 
-  constructor() { }
+  estado: Estado = new Estado();
+  constructor(private banco: AngularFireDatabase) { }
 
   ngOnInit() {
+  }
+  salvar() {
+    this.banco.list('estado').push(this.estado);
+    this.estado = new Estado();
+    alert('salvo com sucesso!');
   }
 
 }

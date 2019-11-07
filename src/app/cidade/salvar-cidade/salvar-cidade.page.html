@@ -14,7 +14,7 @@
       <ion-item>
         <ion-label position="floating">Sigla*:</ion-label>
         <ion-select #sigla = "ngModel" [(ngModel)]="cidade.estado" requiered>
-          <ion-select-option *ngFor='let estado of listaEstado | async' [value]="estado">{{estado.nome}}</ion-select-option>
+          <ion-select-option *ngFor='let estado of listaEstado | async' [value]="estado">{{estado.sigla}}</ion-select-option>
         </ion-select>
       </ion-item>
     </form>
