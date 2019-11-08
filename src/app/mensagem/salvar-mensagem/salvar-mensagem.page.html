@@ -9,11 +9,21 @@
 <ion-content>
   <ion-card-content>
     <form #meuSonho='ngForm'>
-      <ion-input #campo1="ngModel" [(ngModel)]="mensagem.campo1" name="campo1" required>Eu,</ion-input>
-      <ion-input #campo2="ngModel" [(ngModel)]="mensagem.campo2" name="campo2" required>portador(a) do RG ou CPF</ion-input>
-      <ion-input #campo3="ngModel" [(ngModel)]="mensagem.campo3" name="campo3" required>autorizo a saída do(a) aluno(a)</ion-input>
-      <ion-input #campo4="ngModel" [(ngModel)]="mensagem.campo4" name="campo4" required>matriculado(a) no (ano e curso)</ion-input>
-      <ion-input #campo5="ngModel" [(ngModel)]="mensagem.campo5" name="campo5" required>pelo motivo</ion-input>
+      <ion-item>
+        <ion-input #campo1="ngModel" [(ngModel)]="mensagem.campo1" name="campo1" required>Eu,</ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #campo2="ngModel" [(ngModel)]="mensagem.campo2" name="campo2" required>portador(a) do RG ou CPF</ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #campo3="ngModel" [(ngModel)]="mensagem.campo3" name="campo3" required>autorizo a saída do(a) aluno(a)</ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #campo4="ngModel" [(ngModel)]="mensagem.campo4" name="campo4" required>matriculado(a) no (ano e curso)</ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #campo5="ngModel" [(ngModel)]="mensagem.campo5" name="campo5" required>pelo motivo</ion-input>
+      </ion-item>
       <ion-item>
         <ion-label position="flolting">Grau de parentesco*:</ion-label>
         <ion-select #parentesco='ngModel' [(ngModel)]="mensagem.parentesco" placeholder="Selecione o grau" requiered>
@@ -26,11 +36,11 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Data*:</ion-label>
-        <ion-datetime #data =  "ngModel" displayFormat="DD MM YY" placeholder="Selecione a data"  [(ngModel)] = "mensagem.data" name = "data" requiered></ion-datetime>
+        <ion-datetime #data="ngModel" displayFormat="DD MM YY" placeholder="Selecione a data" [(ngModel)]="mensagem.data" name="data" requiered></ion-datetime>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Horário*:</ion-label>
-        <ion-datetime displayFormat="HH:mm" placeholder="Selecione o horário" #horario = "ngModel" [(ngModel)] = "mensagem.horario" name = "data" requiered></ion-datetime>
+        <ion-datetime displayFormat="HH:mm" placeholder="Selecione o horário" #horario="ngModel" [(ngModel)]="mensagem.horario" name="data" requiered></ion-datetime>
       </ion-item>
     </form>
     <ion-item>
@@ -65,5 +75,7 @@
     </span>
   </ion-card>
 
-  <ion-button [disabled]='!meuSonho.form.valid' color="danger" (click)="enviar()"><ion-icon name="paper-plane"></ion-icon>Enviar</ion-button>
+  <ion-button [disabled]='!meuSonho.form.valid' color="danger" (click)="enviar()">
+    <ion-icon name="paper-plane"></ion-icon>Enviar
+  </ion-button>
 </ion-content>

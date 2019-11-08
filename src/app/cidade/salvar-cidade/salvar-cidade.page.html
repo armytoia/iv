@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>salvar-cidade</ion-title>
+    <ion-title>Cidade</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,20 +11,17 @@
         <ion-label position="floating">Nome*:</ion-label>
         <ion-input #nome = "ngModel" name="nome" [(ngModel)]="cidade.nome" requiered></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label position="floating">Sigla*:</ion-label>
-        <ion-select #sigla = "ngModel" [(ngModel)]="cidade.estado" requiered>
-          <ion-select-option *ngFor='let estado of listaEstado | async' [value]="estado">{{estado.sigla}}</ion-select-option>
-        </ion-select>
-      </ion-item>
     </form>
+    <ion-item>
+      <ion-label position="floating">Sigla*:</ion-label>
+      <ion-select  [(ngModel)]="cidade.estado" >
+        <ion-select-option *ngFor='let estado of listaEstado | async' [value]="estado">{{estado.sigla}}</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-card-content>
   <ion-card>
     <span style='color:red' *ngIf="nome.errors && nome.touched">
       <ion-label>O nome é obrigatório! </ion-label>
-    </span>
-    <span style='color:red' *ngIf="sigla.errors && sigla.touched">
-      <ion-label>A sigla é obrigatória! </ion-label>
     </span>
   </ion-card>
   <ion-button [disabled]='!meuSonho.form.valid' expand="full" shape="round" (click)="salvar()">salvar</ion-button>
