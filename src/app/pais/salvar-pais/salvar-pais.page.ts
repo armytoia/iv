@@ -17,7 +17,7 @@ export class SalvarPaisPage implements OnInit {
 
   pais: Pais = new Pais();
   listaCidade: Observable<Cidade[]>;
-  listaEStado: Observable<Estado[]>;
+  listaEstado: Observable<Estado[]>;
   constructor(private afAuth: AngularFireAuth, private router: Router, private fire: AngularFireDatabase) {
     this.listaCidade = this.fire.list<Cidade>('cidade').snapshotChanges().pipe(
       map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))

@@ -8,4 +8,5 @@ export class Mensagem {
   parentesco: string;
   data: string;
   horario: string;
+  key;
 }
