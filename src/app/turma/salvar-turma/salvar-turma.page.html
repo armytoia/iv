@@ -12,4 +12,18 @@
   </ion-item>
 </ion-card-content>
   <ion-button color = "danger" shape = "round" expand = "full" (click)="salvar()">salvar</ion-button>
+
+  <ion-tabs color = "black">
+  <ion-tab-bar slot="bottom" color = "black">
+    <ion-button expand = "full" color = "blank" href = "home">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>inicio</ion-label>
+    </ion-button>
+
+    <ion-button expand = "full" color = "blank" tab="speakers" href = "salvar-aluno">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>Alunos</ion-label>
+    </ion-button>
+  </ion-tab-bar>
+</ion-tabs>
 </ion-content>

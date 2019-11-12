@@ -21,7 +21,7 @@ export class SalvarMensagemPage implements OnInit {
   enviar() {
     this.fire.list('mensagem').push(this.mensagem);
     this.mensagem = new Mensagem();
-    this.rota.navigate(['listar-mensagem']);
+    this.rota.navigate(['/']);
   }
   /*this.localNotifications.schedule({
     id: 1,

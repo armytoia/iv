@@ -4,8 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card-content>
+<ion-content  color = "dark">
+  <ion-card-content >
     <form #meuSonho='ngForm'>
       <ion-item>
         <ion-label position="floating">Email *:</ion-label>
@@ -24,6 +24,20 @@
     </span>
   </ion-card-content>
 
-  <ion-button [disabled] = '!meuSonho.form.valid' expand="full" color = "danger" (click)="entrar()"> acessar</ion-button>
-  <ion-button expand="full" color = "danger" (click) = "mudar()"> esqueci a senha</ion-button>
+  <ion-tabs color = "black">
+  <ion-tab-bar slot="bottom" color = "black">
+    <ion-button expand = "full" color = "blank" href = "home">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>inicio</ion-label>
+    </ion-button>
+
+    <ion-button expand = "full" color = "blank" tab="speakers" href = "listar-aluno">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>Alunos</ion-label>
+    </ion-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+  <ion-button [disabled] = '!meuSonho.form.valid' expand="full" shape = "round" color = "danger" (click)="entrar()"> acessar</ion-button>
+  <ion-button expand="full" color = "danger" (click) = "mudar()" shape = "round"> esqueci a senha</ion-button>
 </ion-content>

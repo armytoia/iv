@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
 import { Router } from '@angular/router';
 import { Pais } from '../pais/entidade/pais';
+import { Routes } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',

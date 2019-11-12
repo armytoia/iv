@@ -46,6 +46,20 @@
 
     </ion-card>
   </ion-card-content>
+
+  <ion-tabs color = "black">
+  <ion-tab-bar slot="bottom" color = "black">
+    <ion-button expand = "full" color = "blank" href = "home">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>inicio</ion-label>
+    </ion-button>
+
+    <ion-button expand = "full" color = "blank" tab="speakers" href = "salvar-aluno">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>Alunos</ion-label>
+    </ion-button>
+  </ion-tab-bar>
+</ion-tabs>
   <ion-button [disabled]='!meuSonho.form.valid' color="danger" expand="full" (click)="cadastrar">cadastrar</ion-button>
 
 </ion-content>

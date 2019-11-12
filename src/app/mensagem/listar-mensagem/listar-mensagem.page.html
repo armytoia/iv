@@ -1,24 +1,25 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Lista de Alunos
+      Mensagens enviadas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content >
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let aluno of listaFiltro">
-      <ion-label>{{ aluno.nome }}</ion-label>
-      <ion-label> {{ turma.ano }}</ion-label>
-      <ion-button color="danger" (click)="excluir(aluno.key)">
+    <ion-item *ngFor="let mensagem of listaFiltro">
+      <ion-label>{{ mensagem.campo1 }}</ion-label>
+      <ion-label> {{ mensagem.campo2 }}</ion-label>
+      <ion-label>{{ mensagem.campo3 }}</ion-label>
+      <ion-label>{{ mensagem.campo4 }}</ion-label>
+      <ion-label>{{ mensagem.campo5 }}</ion-label>
+      <ion-label>{{ mensagem.data }}</ion-label>
+      <ion-label>{{ mensagem.horario }}</ion-label>
+      <ion-label>{{ mensagem.parentesco }}</ion-label>
+      <ion-label>{{ mensagem.campo6 }}</ion-label>
+      <ion-button color="danger" (click)="excluir(mensagem.key)">
         <ion-icon name="trash"></ion-icon>
-      </ion-button>
-      <ion-button color="success" (click)="alterar(aluno)">
-        <ion-icon name="create"></ion-icon>
-      </ion-button>
-      <ion-button color="secondary" href="salvar-mensagem">
-        <ion-icon name="document"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
