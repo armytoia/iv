@@ -9,14 +9,14 @@
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let aluno of listaFiltro">
-      <ion-label>{{ aluno.nome }}</ion-label>
-      <ion-label> {{ turma.ano }}</ion-label>
+      <ion-label><br><b>Aluno:</b><br>{{ aluno.nome }}<br><br>
+        <b>Turma:</b> <br>{{ turma.ano }}</ion-label>
       <ion-button color="danger" (click)="excluir(aluno.key)">
         <ion-icon name="trash"></ion-icon>
-      </ion-button>
+      </ion-button><br><br>
       <ion-button color="success" (click)="alterar(aluno)">
         <ion-icon name="create"></ion-icon>
-      </ion-button>
+      </ion-button><br><br>
       <ion-button color="secondary" href="salvar-mensagem">
         <ion-icon name="document"></ion-icon>
       </ion-button>

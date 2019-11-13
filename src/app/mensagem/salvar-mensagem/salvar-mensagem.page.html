@@ -35,7 +35,7 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Horário*:</ion-label>
-        <ion-datetime #horario="ngModel" displayFormat="HH:mm" placeholder="Selecione o horário" [(ngModel)]="mensagem.horario" name="horario" required></ion-datetime>
+        <ion-datetime #horario="ngModel" displayFormat="HH:mms" placeholder="Selecione o horário" [(ngModel)]="mensagem.horario" name="horario" required></ion-datetime>
       </ion-item>
     <ion-item>
       <ion-label position="flolting">Grau de parentesco*:</ion-label>
@@ -79,7 +79,7 @@
     <ion-label> O parentesco é obrigatório!</ion-label>
   </span>
 </ion-card>
-  <ion-button [disabled] = '!meuSonho.form.valid' shape = "round" expand = "full" color="danger" (click)="enviar()">
+  <ion-button [disabled] = '!meuSonho.form.valid' shape = "round" expand = "full" color="success" (click)="enviar()">
     <ion-icon name="paper-plane"></ion-icon>Enviar
   </ion-button>
 </ion-content>

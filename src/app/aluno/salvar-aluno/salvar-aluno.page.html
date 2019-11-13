@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar color = "dark">
+  <ion-toolbar >
     <ion-title>Cadastro de Aluno</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color = "dark">
+<ion-content>
   <ion-button  shape = "round" href = "salvar-turma" color = "success"><ion-icon name = "add"></ion-icon></ion-button>
   <ion-card-content>
     <form #meuSonho='ngForm'>
@@ -40,5 +40,5 @@
   </ion-tab-bar>
 </ion-tabs>
 
-  <ion-button [disabled]='!meuSonho.form.valid' shape = "round" expand = "full" color="danger" (click)="salvar()"> salvar </ion-button>
+  <ion-button [disabled]='!meuSonho.form.valid' shape = "round" expand = "full" color="success" (click)="salvar()"> salvar </ion-button>
 </ion-content>
