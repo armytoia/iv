@@ -16,6 +16,10 @@ const routes: Routes = [
   { path: 'listar-cidade', loadChildren: './cidade/listar-cidade/listar-cidade.module#ListarCidadePageModule' },
   { path: 'listar-turma', loadChildren: './turma/listar-turma/listar-turma.module#ListarTurmaPageModule' },
   { path: 'listar-mensagem', loadChildren: './mensagem/listar-mensagem/listar-mensagem.module#ListarMensagemPageModule' },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
+  { path: 'room', loadChildren: './room/room.module#RoomPageModule' },
+  { path: 'add-room', loadChildren: './add-room/add-room.module#AddRoomPageModule' },
+  { path: 'inicio-chat', loadChildren: './inicio-chat/inicio-chat.module#InicioChatPageModule' },
 
 ];
 

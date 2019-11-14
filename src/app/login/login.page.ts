@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
  constructor(private afAuth: AngularFireAuth, private router: Router) { }
  entrar() {
    this.afAuth.auth.signInWithEmailAndPassword(this.pais.email, this.pais.senha).then(
-     () => { this.router.navigate(['salvar-aluno']); }
+     () => { this.router.navigate(['inicio-chat']); }
    ).catch((erro) => console.log(erro));
  }
 
