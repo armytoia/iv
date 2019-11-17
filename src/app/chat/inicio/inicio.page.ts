@@ -9,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import { Chat } from "../entidade/chat";
 
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
@@ -36,14 +37,14 @@ send(){
 
   ngOnInit() {
   }
-  async tela(ev: any) {
+  /*async tela(ev: any) {
       const popover = await this.popoverController.create({
-        component: SalvarPaisPage,
+        component: OpcoesComponent,
         event: ev,
         translucent: true
       });
       return await popover.present();
-    }
+    }*/
     async telaa(ev: any) {
         const popover = await this.popoverController.create({
           component: SalvarAlunoPage,

@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {Firebase} from '@ionic-native/firebase/ngx';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { SalvarMensagemComponent } from './mensagem/salvar-mensagem/salvar-mensagem.component';
+import { SMS } from '@ionic-native/sms/ngx';
 //import { SalvarAlunoPage } from './aluno/salvar-aluno/salvar-aluno.page';
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SalvarMensagemComponent } from './mensagem/salvar-mensagem/salvar-mensa
     SplashScreen,
     Firebase,
     AngularFirestore,
+    SMS,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -4,6 +4,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { PopoverController, ModalController } from '@ionic/angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { SMS } from '@ionic-native/sms/ngx';
+import { Pais } from "../../pais/entidade/pais";
 
 @Component({
   selector: 'app-salvar-mensagem',
@@ -13,11 +15,12 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class SalvarMensagemComponent implements OnInit {
   mensagem: Mensagem = new Mensagem();
 
-  constructor(public popoverController: PopoverController, private modal: ModalController, private afAuth: AngularFireAuth, private fire: AngularFireDatabase, private rota: Router) { }
+  constructor(private sms: SMS, public popoverController: PopoverController, private modal: ModalController, private afAuth: AngularFireAuth, private fire: AngularFireDatabase, private rota: Router) { }
   enviar() {
     if (this.mensagem.key == null) {
       this.fire.list('mensagem').push(this.mensagem);
       this.mensagem = new Mensagem();
+      this.sms.send('pais.telefone', {{mensagem}});
       this.rota.navigate(['listar-mensagem']);
     }
     else {
