@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'room', loadChildren: './room/room.module#RoomPageModule' },
   { path: 'add-room', loadChildren: './add-room/add-room.module#AddRoomPageModule' },
   { path: 'inicio-chat', loadChildren: './inicio-chat/inicio-chat.module#InicioChatPageModule' },
+  { path: 'inicio', loadChildren: './chat/inicio/inicio.module#InicioPageModule' },
 
 ];
 

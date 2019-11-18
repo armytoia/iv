@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "189075029472",
+    "firebase_url": "https://ivvi-8df21.firebaseio.com",
+    "project_id": "ivvi-8df21",
+    "storage_bucket": "ivvi-8df21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189075029472:android:759c3ad788a149a9803f85",
+        "android_client_info": {
+          "package_name": "br.com.notificacoes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189075029472-qcpodkas0asq2kpk8ek0bnqnsfj8mqmo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7_LVyScrZzsC-NpYuKJIS-_BIQZQENtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189075029472-qcpodkas0asq2kpk8ek0bnqnsfj8mqmo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

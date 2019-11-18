@@ -1,26 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Mensagens enviadas
-    </ion-title>
+    <ion-title>Autorizações</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content >
+<ion-content>
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let mensagem of listaFiltro">
-      <ion-label>{{ mensagem.campo1 }}</ion-label>
-      <ion-label> {{ mensagem.campo2 }}</ion-label>
-      <ion-label>{{ mensagem.campo3 }}</ion-label>
-      <ion-label>{{ mensagem.campo4 }}</ion-label>
-      <ion-label>{{ mensagem.campo5 }}</ion-label>
-      <ion-label>{{ mensagem.data }}</ion-label>
-      <ion-label>{{ mensagem.horario }}</ion-label>
-      <ion-label>{{ mensagem.parentesco }}</ion-label>
-      <ion-label>{{ mensagem.campo6 }}</ion-label>
-      <ion-button color="danger" (click)="excluir(mensagem.key)">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
+      <ion-label><br><b>Responsável:</b><br>{{ mensagem.campo1 }}<br><br><b>Documento:</b> <br>{{mensagem.campo2}}<br><br>
+        <b>Aluno(a):</b> <br>{{ mensagem.campo3 }}<br><br> <b>Matriculado(a):</b> <br>{{ mensagem.campo4 }}<br><br>
+        <b>Motivo:</b> <br>{{ mensagem.campo5 }}<br><br> <b>Data:</b> <br>{{ mensagem.data }}<br><br>
+        <b>Parentesco:</b> <br>{{ mensagem.parentesco }}<br><br> <b>Horário:</b> <br>{{ mensagem.horario }}<br><br></ion-label>
     </ion-item>
   </ion-list>
 

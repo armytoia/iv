@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar >
-    <ion-title>Cadastro de Aluno</ion-title>
+    <ion-title>Adcionar Aluno</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -27,18 +27,18 @@
   </ion-card>
 
   <ion-tabs color = "black">
-  <ion-tab-bar slot="bottom" color = "black">
-    <ion-button expand = "full" color = "blank" href = "home">
+  <ion-tab-bar slot="bottom" color = "blank">
+    <ion-button expand = "full" color = "dark" href = "home">
       <ion-icon name="calendar"></ion-icon>
       <ion-label>inicio</ion-label>
     </ion-button>
 
-    <ion-button expand = "full" color = "blank" tab="speakers" href = "listar-aluno">
+    <ion-button expand = "full" color = "dark" tab="speakers" href = "listar-aluno">
       <ion-icon name="contacts"></ion-icon>
       <ion-label>Alunos</ion-label>
     </ion-button>
   </ion-tab-bar>
 </ion-tabs>
 
-  <ion-button [disabled]='!meuSonho.form.valid' shape = "round" expand = "full" color="success" (click)="salvar()"> salvar </ion-button>
+  <ion-button [disabled]='!meuSonho.form.valid' shape = "round" expand = "full" color="success" (click)="salvar()"> adcionar </ion-button>
 </ion-content>

@@ -38,7 +38,7 @@ export class ListarMensagemPage implements OnInit {
     alert("excluida da lista");
   }
   filtrar(){
-    this.filtro['data'] = val => val.includes(this.valor);
+    this.filtro['campo3'] = val => val.includes(this.valor);
     this.listaFiltro = _.filter(this.alunos, _.conforms(this.filtro));
   }
 }
