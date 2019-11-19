@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ListarMensagemPage } from './listar-mensagem.page';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListarMensagemPage]
+  declarations: [ListarMensagemPage],
+  providers:[AngularFireAuth],
 })
 export class ListarMensagemPageModule {}

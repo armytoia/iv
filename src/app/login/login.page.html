@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color = "success">
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content  color = "dark">
+<ion-content >
   <ion-card-content >
     <form #meuSonho='ngForm'>
       <ion-item>
@@ -26,6 +26,6 @@
 
 
 
-  <ion-button [disabled] = '!meuSonho.form.valid' expand="full" shape = "round" color = "danger" (click)="entrar()"> acessar</ion-button>
-  <ion-button expand="full" color = "danger" (click) = "mudar()" shape = "round"> esqueci a senha</ion-button>
+  <ion-button [disabled] = '!meuSonho.form.valid' expand="full" shape = "round" color = "success" (click)="entrar()"> acessar</ion-button>
+  <ion-button expand="full" color = "success" (click) = "mudar()" shape = "round"> esqueci a senha</ion-button>
 </ion-content>

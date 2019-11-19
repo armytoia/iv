@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SalvarMensagemPage } from './salvar-mensagem.page';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SalvarMensagemPage]
+  declarations: [SalvarMensagemPage],
+  providers:[AngularFireAuth],
 })
 export class SalvarMensagemPageModule {}

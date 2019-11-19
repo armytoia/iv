@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { SalvarPaisPage } from 'src/app/pais/salvar-pais/salvar-pais.page';
 import { SalvarAlunoPage } from 'src/app/aluno/salvar-aluno/salvar-aluno.page';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-inicio',
@@ -10,7 +12,7 @@ import { SalvarAlunoPage } from 'src/app/aluno/salvar-aluno/salvar-aluno.page';
 })
 export class InicioPage implements OnInit {
 
-  constructor(public popoverController: PopoverController) { }
+  constructor(public popoverController: PopoverController, private afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,4 +32,9 @@ export class InicioPage implements OnInit {
         });
         return await popover.present();
       }
+      logout() {
+        this.afAuth.auth.signOut();
+        this.router.navigate(['home']);
+      }
+
 }

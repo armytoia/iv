@@ -6,6 +6,9 @@ import { ModalController } from '@ionic/angular';
 import * as _ from 'lodash';
 import { PopoverController } from '@ionic/angular';
 import { Mensagem } from '../entidade/mensagem';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
+import { SalvarMensagemPage } from '../salvar-mensagem/salvar-mensagem.page';
 
 @Component({
   selector: 'app-listar-mensagem',
@@ -18,9 +21,9 @@ export class ListarMensagemPage implements OnInit {
   items: Observable<Mensagem[]>;
   listaFiltro: Mensagem[];
   filtro = {}; //regras ativas do filtro
-  alunos: any;
+  mensagens: any;
   valor: string;
-  constructor(private fire: AngularFireDatabase,  private modal: ModalController, public popoverController: PopoverController) {
+  constructor(private fire: AngularFireDatabase,  private modal: ModalController, public popoverController: PopoverController, private afAuth: AngularFireAuth, private router: Router) {
     this.listaMensagem = this.fire.list<Mensagem>('mensagem').snapshotChanges().pipe(//busca
       map(lista => lista.map(linha => ({
         key: linha.payload.key, ...linha.payload.val()// seja formatado pela chave e pelo valor
@@ -28,9 +31,9 @@ export class ListarMensagemPage implements OnInit {
     );//ira guardar esses contatos(lista), o fire tem os metodos necessarios para listar, e converter os dados para contato, configurando ela em linha(chave)
   }
   ngOnInit() {
-    this.listaMensagem.subscribe(aluno => {
-          this.alunos = aluno;
-          this.listaFiltro = _.filter(this.alunos, _.conforms(this.filtro));
+    this.listaMensagem.subscribe(mensagem => {
+          this.mensagens = mensagem;
+          this.listaFiltro = _.filter(this.mensagens, _.conforms(this.filtro));
   })
   }
   excluir(key){
@@ -39,6 +42,17 @@ export class ListarMensagemPage implements OnInit {
   }
   filtrar(){
     this.filtro['campo3'] = val => val.includes(this.valor);
-    this.listaFiltro = _.filter(this.alunos, _.conforms(this.filtro));
+    this.listaFiltro = _.filter(this.mensagens, _.conforms(this.filtro));
+  }
+  logout() {
+    this.afAuth.auth.signOut();
+    this.router.navigate(['home']);
+  }
+  async alterar(entidade) {
+    const tela = await this.modal.create({
+      component: SalvarMensagemPage, componentProps: { mensagem: entidade }
+    });
+    tela.present();
   }
 }
+

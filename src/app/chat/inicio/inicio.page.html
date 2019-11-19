@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color = "success">
     <ion-title>
       CHAT
     </ion-title>
@@ -8,5 +8,19 @@
 
 <ion-content>
   <ion-label color = "success">Grupos</ion-label>
-  <ion-button color = "danger" https://api.whatsapp.com/send?l=pt_BR&phone="55044998220812">enviar sms</ion-button>
+  <ion-button color = "success" shape = "round"><ion-icon name="send"></ion-icon>enviar sms</ion-button>
+
+  <ion-tabs color = "dark">
+  <ion-tab-bar slot="bottom" color = "dark">
+    <ion-button expand = "full" color = "dark" href = "home">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>deslogar</ion-label>
+    </ion-button>
+
+    <ion-button expand = "full" color = "dark" tab="speakers" href = "listar-aluno">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>Alunos</ion-label>
+    </ion-button>
+  </ion-tab-bar>
+</ion-tabs>
 </ion-content>

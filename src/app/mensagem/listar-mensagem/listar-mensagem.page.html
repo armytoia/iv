@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-title>Autorizações</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,26 +7,30 @@
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let mensagem of listaFiltro">
-      <ion-label><br><b>Responsável:</b><br>{{ mensagem.campo1 }}<br><br><b>Documento:</b> <br>{{mensagem.campo2}}<br><br>
-        <b>Aluno(a):</b> <br>{{ mensagem.campo3 }}<br><br> <b>Matriculado(a):</b> <br>{{ mensagem.campo4 }}<br><br>
-        <b>Motivo:</b> <br>{{ mensagem.campo5 }}<br><br> <b>Data:</b> <br>{{ mensagem.data }}<br><br>
-        <b>Parentesco:</b> <br>{{ mensagem.parentesco }}<br><br> <b>Horário:</b> <br>{{ mensagem.horario }}<br><br></ion-label>
+      <ion-label><br><b>Aluno:</b><br>{{ mensagem.campo3 }}<br><br>
+        <b>Turma:</b> <br>{{ mensagem.campo4 }}</ion-label>
+      <ion-button color="danger" (click)="excluir(mensagem.key)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button><br><br>
+      <ion-button color="success" (click)="alterar(mensagem)">
+        <ion-icon name="eye"></ion-icon>
+      </ion-button><br><br>
     </ion-item>
+
   </ion-list>
-
-  <ion-tabs color = "black">
-  <ion-tab-bar slot="bottom" color = "black">
-    <ion-button expand = "full" color = "blank" href = "home">
-      <ion-icon name="calendar"></ion-icon>
-      <ion-label>inicio</ion-label>
-    </ion-button>
-
-    <ion-button expand = "full" color = "blank" tab="speakers" href = "listar-aluno">
-      <ion-icon name="contacts"></ion-icon>
-      <ion-label>Alunos</ion-label>
-    </ion-button>
-  </ion-tab-bar>
-</ion-tabs>
+  <ion-tabs color = "dark">
+    <ion-tab-bar slot="bottom" color = "dark">
+      <ion-button expand = "full" color = "dark" href = "home">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>deslogar</ion-label>
+      </ion-button>
+  
+      <ion-button expand = "full" color = "dark" tab="speakers" href = "listar-aluno">
+        <ion-icon name="contacts"></ion-icon>
+        <ion-label>Alunos</ion-label>
+      </ion-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
 <ion-footer>
 </ion-footer>

@@ -7,6 +7,8 @@ import * as _ from 'lodash';
 import { PopoverController } from '@ionic/angular';
 import { Aluno } from '../entidade/aluno';
 import { SalvarAlunoPage } from '../salvar-aluno/salvar-aluno.page';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-aluno',
@@ -20,7 +22,7 @@ export class ListarAlunoPage implements OnInit {
   filtro = {}; //regras ativas do filtro
   alunos: any;
   valor: string;
-  constructor(private fire: AngularFireDatabase,  private modal: ModalController, public popoverController: PopoverController) {
+  constructor(private afAuth: AngularFireAuth, private fire: AngularFireDatabase,  private modal: ModalController, public popoverController: PopoverController, private router: Router) {
     this.listaAluno = this.fire.list<Aluno>('aluno').snapshotChanges().pipe(//busca
       map(lista => lista.map(linha => ({
         key: linha.payload.key, ...linha.payload.val()// seja formatado pela chave e pelo valor
@@ -46,6 +48,10 @@ export class ListarAlunoPage implements OnInit {
   filtrar(){
     this.filtro['nome'] = val => val.includes(this.valor);
     this.listaFiltro = _.filter(this.alunos, _.conforms(this.filtro));
+  }
+  logout() {
+    this.afAuth.auth.signOut();
+    this.router.navigate(['home']);
   }
 
   }
