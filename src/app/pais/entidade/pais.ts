@@ -7,4 +7,5 @@ export class Pais {
   telefone: string;
   cidade: Cidade;
   estado: Estado;
+  nome : string;
 }
