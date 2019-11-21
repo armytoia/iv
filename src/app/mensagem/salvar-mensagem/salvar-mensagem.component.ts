@@ -16,7 +16,7 @@ export class SalvarMensagemComponent implements OnInit {
   constructor(public popoverController: PopoverController, private modal: ModalController, private afAuth: AngularFireAuth, private fire: AngularFireDatabase, private rota: Router) { }
   enviar() {
     if (this.mensagem.key == null) {
-      this.fire.list('aluno').push(this.mensagem);
+      this.fire.list('mensagem').push(this.mensagem);
       this.mensagem = new Mensagem();
       this.rota.navigate(['listar-mensagem']);
     }
