@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { SalvarMensagemComponent } from './mensagem/salvar-mensagem/salvar-mensagem.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'listar-cidade', loadChildren: './cidade/listar-cidade/listar-cidade.module#ListarCidadePageModule' },
   { path: 'listar-turma', loadChildren: './turma/listar-turma/listar-turma.module#ListarTurmaPageModule' },
   { path: 'listar-mensagem', loadChildren: './mensagem/listar-mensagem/listar-mensagem.module#ListarMensagemPageModule' },
+  { path: 'SalvarMensagemComponent', loadChildren: './mensagem/salvar-mensagem/salvar-mensagem.component'},
 //  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
   { path: 'inicio', loadChildren: './chat/inicio/inicio.module#InicioPageModule' },
 

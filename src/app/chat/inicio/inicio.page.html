@@ -7,6 +7,20 @@
 </ion-header>
 
 <ion-content>
+  <ion-tabs color="dark">
+    <ion-tab-bar slot="bottom" color="dark">
+      <ion-button expand="full" color="dark" href="home">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>deslogar</ion-label>
+      </ion-button>
+      <ion-button expand="full" color="dark" href="listar-mensagem">
+        <ion-icon name="list-box"></ion-icon></ion-button>
+      <ion-button expand="full" color="dark" tab="speakers" href="listar-aluno">
+        <ion-icon name="contacts"></ion-icon>
+        <ion-label>Alunos</ion-label>
+      </ion-button>
+    </ion-tab-bar>
+  </ion-tabs>
   <div class = "chat" *ngFor= "let chat of chatRef | async" >
     <div class = "me" *ngIf = "uid == chat.UserID">
       {{chat.message}}
@@ -19,24 +33,11 @@
     </div>
   </div>
 
-
-        <ion-tabs color="dark">
-          <ion-tab-bar slot="bottom" color="dark">
-            <ion-button expand="full" color="dark" href="home">
-              <ion-icon name="calendar"></ion-icon>
-              <ion-label>deslogar</ion-label>
-            </ion-button>
-
-            <ion-button expand="full" color="dark" tab="speakers" href="listar-aluno">
-              <ion-icon name="contacts"></ion-icon>
-              <ion-label>Alunos</ion-label>
-            </ion-button>
-          </ion-tab-bar>
-        </ion-tabs>
 </ion-content>
 <ion-footer>
   <ion-item>
     <ion-input placeholder = "Type..." [(ngModel)] = "text"></ion-input>
     <ion-button (click) = "send()" fill = "clear" ion-only slot= "end"><ion-icon name = "send"></ion-icon></ion-button>
     </ion-item>
+
 </ion-footer>

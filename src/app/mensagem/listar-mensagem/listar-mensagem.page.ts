@@ -8,7 +8,7 @@ import { PopoverController } from '@ionic/angular';
 import { Mensagem } from '../entidade/mensagem';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
-import { SalvarMensagemPage } from '../salvar-mensagem/salvar-mensagem.page';
+import { SalvarMensagemComponent } from '../salvar-mensagem/salvar-mensagem.component';
 
 @Component({
   selector: 'app-listar-mensagem',
@@ -50,9 +50,8 @@ export class ListarMensagemPage implements OnInit {
   }
   async alterar(entidade) {
     const tela = await this.modal.create({
-      component: SalvarMensagemPage, componentProps: { mensagem: entidade }
+      component: SalvarMensagemComponent, componentProps: { mensagem: entidade }
     });
     tela.present();
   }
 }
-
