@@ -13,12 +13,11 @@ const routes: Routes = [
   { path: 'salvar-estado', loadChildren: './estado/salvar-estado/salvar-estado.module#SalvarEstadoPageModule' },
   { path: 'listar-estado', loadChildren: './estado/listar-estado/listar-estado.module#ListarEstadoPageModule' },
   { path: 'salvar-turma', loadChildren: './turma/salvar-turma/salvar-turma.module#SalvarTurmaPageModule' },
-   { path: 'salvar-mensagem', loadChildren: './mensagem/salvar-mensagem/salvar-mensagem.module#SalvarMensagemPageModule' },
   { path: 'salvar-cidade', loadChildren: './cidade/salvar-cidade/salvar-cidade.module#SalvarCidadePageModule' },
   { path: 'listar-cidade', loadChildren: './cidade/listar-cidade/listar-cidade.module#ListarCidadePageModule' },
   { path: 'listar-turma', loadChildren: './turma/listar-turma/listar-turma.module#ListarTurmaPageModule' },
   { path: 'listar-mensagem', loadChildren: './mensagem/listar-mensagem/listar-mensagem.module#ListarMensagemPageModule' },
-  { path: 'SalvarMensagemComponent', loadChildren: './mensagem/salvar-mensagem/salvar-mensagem.component'},
+  { path: 'salvar-mensagem', component: SalvarMensagemComponent},
 //  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
   { path: 'inicio', loadChildren: './chat/inicio/inicio.module#InicioPageModule' },
 

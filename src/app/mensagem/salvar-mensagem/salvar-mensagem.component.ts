@@ -14,20 +14,20 @@ import { Pais } from "../../pais/entidade/pais";
 })
 export class SalvarMensagemComponent implements OnInit {
   mensagem: Mensagem = new Mensagem();
-
+  key;
   constructor(private sms: SMS, public popoverController: PopoverController, private modal: ModalController, private afAuth: AngularFireAuth, private fire: AngularFireDatabase, private rota: Router) { }
   enviar() {
-    if (this.mensagem.key == null) {
-      this.fire.list('mensagem').push(this.mensagem);
+    if (this.key == null) {
+      this.fire.list('aluno').push(this.mensagem);
       this.mensagem = new Mensagem();
-      this.sms.send('pais.telefone', {{mensagem}});
       this.rota.navigate(['listar-mensagem']);
     }
     else {
-      this.fire.object('mensagem/' + this.mensagem.key).update(this.mensagem);
+      this.fire.object('mensagem/' + this.key).update(this.mensagem);
       this.modal.dismiss();
     }
   }
+    //this.sms.send('pais.telefone').push(this.mensagem);
   ngOnInit() {
 
   }
