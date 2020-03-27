@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color = "success">
+    <ion-title>Adcionar medicamentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card-content>
+    <form #meuSonho='ngForm'>
+      <ion-item>
+        <ion-label position="floating">Nome:</ion-label>
+        <ion-input #nome = "ngModel" placeholder="insira o nome do medicamento"  name = "nome" [(ngModel)]="med.nome" type="text" requiered></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Quantidade*:</ion-label>
+        <ion-input #quantidade='ngModel' placeholder="insira a quantidade" name="quantidade" [(ngModel)]="med.quantidade" requiered></ion-input>
+      </ion-item>
+    </form>
+    <ion-item>
+      <ion-label position="floating">Posto*:</ion-label>
+      <ion-select  [(ngModel)]="med.posto" [value]="posto" >
+        <ion-select-option *ngFor='let posto of listaPosto | async' [value]="posto">{{posto.end}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-card>
+      <span style='color:red' *ngIf="nome.errors && nome.touched">
+        <ion-label>O nome do medicamento é obrigatório! </ion-label>
+      </span>
+      <span style='color:blue' *ngIf="quantidade.errors && quantidade.touched">
+        <ion-label> A quantidade é obrigatória!</ion-label>
+      </span>
+    </ion-card>
+  </ion-card-content>
+
+
+  <ion-button [disabled]='!meuSonho.form.valid' color="success" shape = "round" expand="full" (click)="cadastrar">adcionar</ion-button>
+    <ion-button color="success" shape = "round" expand="full" href = "salvar-opcao">voltar</ion-button>
+</ion-content>

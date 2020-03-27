@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color = "success">
+    <ion-title>
+      Postos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let posto of listaFiltro">
+      <ion-label><br><b>Nome:</b><br>{{ posto.nome }}<br><br>
+        <b>Endereço:</b> <br>{{ posto.end }}</ion-label>
+      <ion-button color="danger" (click)="excluir(posto.key)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button><br><br>
+      <ion-button color="success" (click)="alterar(posto)">
+        <ion-icon name="create"></ion-icon>
+      </ion-button><br><br>
+    </ion-item>
+  </ion-list>
+
+  <ion-tabs color = "dark">
+    <ion-tab-bar slot="bottom" color = "dark">
+      <ion-button expand = "full" color = "dark" href = "home">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>deslogar</ion-label>
+      </ion-button>
+
+      <ion-button expand = "full" color = "dark" tab="speakers" href = "listar-med">
+        <ion-icon name="contacts"></ion-icon>
+        <ion-label>medicamentos</ion-label>
+      </ion-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
+<ion-footer>
+</ion-footer>

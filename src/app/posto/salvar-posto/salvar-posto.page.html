@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>Cadastrar Posto de Saúde</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <form #meuSonho='ngForm'>
+      <ion-item>
+        <ion-label position="floating">Nome do posto*:</ion-label>
+        <ion-input #nome='ngModel' name="nome" [(ngModel)]="posto.nome" requiered></ion-input>
+      </ion-item>
+          </form>
+    <ion-item>
+      <ion-label position="floating">Endereço*:</ion-label>
+      <ion-input #end='ngModel' name="end" [(ngModel)]="posto.end" requiered></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">email*:</ion-label>
+      <ion-input #email='ngModel' name="email" [(ngModel)]="posto.email" requiered></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha*:</ion-label>
+      <ion-input #senha='ngModel' name="senha" [(ngModel)]="posto.senha" minlength="8" requiered></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <ion-card>
+    <span style='color:red' *ngIf="nome.errors && nome.touched">
+      <ion-label>O nome é obrigatório! </ion-label>
+    </span>
+    <span style='color:blue' *ngIf="end.errors && end.touched">
+      <ion-label>O endereço é obrigatório! </ion-label>
+    </span>
+    <span style='color:red' *ngIf="email.errors && email.touched">
+      <ion-label>O email é obrigatório! </ion-label>
+    </span>
+    <span style='color:blue' *ngIf="senha.errors && senha.touched">
+      <ion-label>A senha deve conter no mínimo 8 digitos! </ion-label>
+    </span>
+  </ion-card>
+
+  <ion-tabs color = "black">
+  <ion-tab-bar slot="bottom" color = "blank">
+    <ion-button expand = "full" color = "dark" href = "home">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>inicio</ion-label>
+    </ion-button>
+
+    <ion-button expand = "full" color = "dark" tab="speakers" href = "listar-med">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>Medicamentos</ion-label>
+    </ion-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+  <ion-button [disabled]='!meuSonho.form.valid' shape = "round" expand = "full" color="success" (click)="salvar()"> cadastrar </ion-button>
+</ion-content>
